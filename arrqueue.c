@@ -5,10 +5,11 @@ void insert(queue q, int val) {
     q.queue[rear]=val
 }
 int delete(queue q) {
-    int delete;
+    int del;
     if (isEmpty(q)) return -9999;
     del=q.queue[q.front];
-    front++; 
+    q.front++;
+    if (isEmpty) q.front=q.rear=1;
 }
 int isFull(queue q) {
     if (q.rear==q.max-1) return 1;

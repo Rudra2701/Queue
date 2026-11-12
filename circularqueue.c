@@ -1,21 +1,24 @@
 void insert(queue q, int val) {
     if (isFull(q)) return;
-    if (isEmpty(q)) front++;
-    q.rear++;
-    q.queue[rear]=val
+    if (isEmpty(q)) q.front=q.rear=0;
+    else if (q.rear==q.max-1) q.rear=0;
+    else q.rear++;
+    q.queue[q.rear]=val;
 }
 int delete(queue q) {
-    int delete;
+    int del;
     if (isEmpty(q)) return -9999;
-    del=q.queue[q.front];
-    front++; 
+    del=q.queue[q.front]
+    if (front==max-1) front=0;
+    else front++;
+    if (isEmpty) front=rear=-1
 }
 int isFull(queue q) {
-    if (q.rear==q.max-1) return 1;
+    if ((front==0 && rear==max-1) || front==rear+1) return 1;
     return 0;
 }
 int isEmpty(queue q) {
-    if (front == -1 || front>rear) return 1;
+    if (front == -1 || front==rear) return 1;
     return 0;
 } 
 /*Copyright (C) 2026  Rudra Sahil Shivhare
